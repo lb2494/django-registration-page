@@ -10,6 +10,15 @@
     <li><a class="navbar-brand" href="{% url 'index' %}">DJANGO</a></li>
     <li><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
     <li><a class="navbar-link" href="{% url 'basicapp:register' %}">Register</a></li>
+
+    <!--{% if user.is_authenticated %}-->
+
+    <!--<li><a class="navbar-link" href="{% url 'logout' %}">Logout</a></li>-->
+    <!--{% else %}-->
+    <li><a class="navbar-link" href="{% url 'basicapp:user_login' %}">Login</a></li>
+
+    <!--{% endif %}-->
+
 </div>
 </nav>
 <div class="container">

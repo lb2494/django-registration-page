@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from basicapp.forms import UserForm
 from basicapp.forms import UserProfileInfoForm
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
@@ -59,7 +59,7 @@ def user_login(request):
         username=request.POST.get('username')
         password=request.POST.get('password')
 
-        user=authenticate(username=username,password=password)
+        user=authenticate(username=username, password=password)
 
         if user:
             if user.is_active:
@@ -72,4 +72,4 @@ def user_login(request):
             print("Username: {} and Password: {}".format(username,password))
             return HttpResponse("<h2>Invalid login details</h2>")
     else:
-        return render(request,'basicapp/index.html',{})
+        return render(request,'basicapp/login.html', {})
