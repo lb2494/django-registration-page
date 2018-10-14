@@ -3,9 +3,9 @@
 
 <div class="jumbotron">
     <h1>Please Login!!</h1>
-    <form method="POST" action="{% url 'basicapp/:user_login' %}">
+    <form method="POST" action="{% url 'basicapp:user_login' %}">
         {% csrf_token %}
-        <label for="username" value="USERNAME">USERNAME: </label>
+        <label for="username">USERNAME: </label>
         <input type="text" name="username" placeholder="Enter Username">
         <label for="password" >Password: </label>
         <input type="password" name="password">
